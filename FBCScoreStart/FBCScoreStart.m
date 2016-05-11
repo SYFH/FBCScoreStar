@@ -11,7 +11,6 @@
 @interface FBCScoreStart ()
 
 @property (nonatomic, weak) CAShapeLayer *backgroudLayer;
-@property (nonatomic, weak) CAShapeLayer *startLayer;
 
 @end
 
@@ -60,7 +59,6 @@
         CAShapeLayer *startLayer = [CAShapeLayer layer];
         startLayer.path = start.CGPath;
         self.layer.mask = startLayer;
-        self.startLayer = startLayer;
     }
     return self;
 }
