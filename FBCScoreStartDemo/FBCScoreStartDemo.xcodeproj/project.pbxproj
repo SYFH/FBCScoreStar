@@ -15,7 +15,7 @@
 		0B5D42431CE307E700AED88B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D42411CE307E700AED88B /* LaunchScreen.storyboard */; };
 		0B5D424E1CE307E700AED88B /* FBCScoreStartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D424D1CE307E700AED88B /* FBCScoreStartDemoTests.m */; };
 		0B5D42591CE307E700AED88B /* FBCScoreStartDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D42581CE307E700AED88B /* FBCScoreStartDemoUITests.m */; };
-		0B5D42691CE3080800AED88B /* FBCScoreStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D42681CE3080800AED88B /* FBCScoreStart.m */; };
+		0B5D426C1CE3163600AED88B /* FBCScoreStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D426B1CE3163600AED88B /* FBCScoreStar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		0B5D42541CE307E700AED88B /* FBCScoreStartDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBCScoreStartDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5D42581CE307E700AED88B /* FBCScoreStartDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBCScoreStartDemoUITests.m; sourceTree = "<group>"; };
 		0B5D425A1CE307E700AED88B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B5D42671CE3080800AED88B /* FBCScoreStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCScoreStart.h; sourceTree = "<group>"; };
-		0B5D42681CE3080800AED88B /* FBCScoreStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCScoreStart.m; sourceTree = "<group>"; };
+		0B5D426A1CE3163600AED88B /* FBCScoreStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBCScoreStar.h; path = ../FBCScoreStar/FBCScoreStar.h; sourceTree = "<group>"; };
+		0B5D426B1CE3163600AED88B /* FBCScoreStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBCScoreStar.m; path = ../FBCScoreStar/FBCScoreStar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		0B5D42321CE307E700AED88B /* FBCScoreStartDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0B5D42661CE3080800AED88B /* FBCScoreStart */,
+				0B5D42661CE3080800AED88B /* FBCScoreStar */,
 				0B5D42361CE307E700AED88B /* AppDelegate.h */,
 				0B5D42371CE307E700AED88B /* AppDelegate.m */,
 				0B5D42391CE307E700AED88B /* ViewController.h */,
@@ -144,13 +144,13 @@
 			path = FBCScoreStartDemoUITests;
 			sourceTree = "<group>";
 		};
-		0B5D42661CE3080800AED88B /* FBCScoreStart */ = {
+		0B5D42661CE3080800AED88B /* FBCScoreStar */ = {
 			isa = PBXGroup;
 			children = (
-				0B5D42671CE3080800AED88B /* FBCScoreStart.h */,
-				0B5D42681CE3080800AED88B /* FBCScoreStart.m */,
+				0B5D426A1CE3163600AED88B /* FBCScoreStar.h */,
+				0B5D426B1CE3163600AED88B /* FBCScoreStar.m */,
 			);
-			name = FBCScoreStart;
+			name = FBCScoreStar;
 			path = ../../FBCScoreStart;
 			sourceTree = "<group>";
 		};
@@ -285,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5D423B1CE307E700AED88B /* ViewController.m in Sources */,
-				0B5D42691CE3080800AED88B /* FBCScoreStart.m in Sources */,
+				0B5D426C1CE3163600AED88B /* FBCScoreStar.m in Sources */,
 				0B5D42381CE307E700AED88B /* AppDelegate.m in Sources */,
 				0B5D42351CE307E700AED88B /* main.m in Sources */,
 			);
@@ -513,6 +513,7 @@
 				0B5D425F1CE307E700AED88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B5D42601CE307E700AED88B /* Build configuration list for PBXNativeTarget "FBCScoreStartDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				0B5D42621CE307E700AED88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B5D42631CE307E700AED88B /* Build configuration list for PBXNativeTarget "FBCScoreStartDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +531,7 @@
 				0B5D42651CE307E700AED88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBCScoreStart : UIView
+@interface FBCScoreStar : UIView
 
 @property (nonatomic, strong) UIColor *startColor;
 @property (nonatomic, assign) CGFloat score;

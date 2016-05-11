@@ -6,15 +6,15 @@
 //  Copyright © 2016年 云翼天. All rights reserved.
 //
 
-#import "FBCScoreStart.h"
+#import "FBCScoreStar.h"
 
-@interface FBCScoreStart ()
+@interface FBCScoreStar ()
 
 @property (nonatomic, weak) CAShapeLayer *backgroudLayer;
 
 @end
 
-@implementation FBCScoreStart
+@implementation FBCScoreStar
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -38,7 +38,7 @@
         self.backgroudLayer = backgroudLayer;
         
         //画图
-        UIBezierPath *start = [[UIBezierPath alloc] init];
+        UIBezierPath *star = [[UIBezierPath alloc] init];
         for (int i = 1; i < num * 2; i ++) {
             if (i % 2 != 0) {
                 CGFloat startX = frame.size.width / (frame.size.width / frame.size.height) * i;
@@ -47,20 +47,20 @@
                 CGFloat angle = 4 * M_PI / 5;
                 
                 //画五角星
-                [start moveToPoint:CGPointMake(startX * 0.5, 0)];
+                [star moveToPoint:CGPointMake(startX * 0.5, 0)];
                 for (int i = 0; i < 5; i ++) {
                     CGFloat x = center.x - sinf((i + 1) * angle) * radius;
                     CGFloat y = center.y - cosf((i + 1) * angle) * radius;
-                    [start addLineToPoint:CGPointMake(x, y)];
+                    [star addLineToPoint:CGPointMake(x, y)];
                 }
-                [start addLineToPoint:CGPointMake(startX * 0.5, 0)];
+                [star addLineToPoint:CGPointMake(startX * 0.5, 0)];
             }
         }
         
         //遮罩
-        CAShapeLayer *startLayer = [CAShapeLayer layer];
-        startLayer.path = start.CGPath;
-        self.layer.mask = startLayer;
+        CAShapeLayer *starLayer = [CAShapeLayer layer];
+        starLayer.path = star.CGPath;
+        self.layer.mask = starLayer;
     }
     return self;
 }
