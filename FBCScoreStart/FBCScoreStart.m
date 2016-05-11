@@ -21,9 +21,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor clearColor];
+        //使用时, 视图的宽度必须大于高度
+        NSAssert(!(frame.size.width < frame.size.height), @"视图的宽度小于高度!");
         
-        CGFloat margin = self.margin;
+        self.backgroundColor = [UIColor clearColor];
         NSInteger num = frame.size.width / frame.size.height;//个数
         
         //底层
@@ -36,22 +37,23 @@
         [self.layer addSublayer:backgroudLayer];
         self.backgroudLayer = backgroudLayer;
         
+        //画图
         UIBezierPath *start = [[UIBezierPath alloc] init];
         for (int i = 1; i < num * 2; i ++) {
             if (i % 2 != 0) {
                 CGFloat startX = frame.size.width / (frame.size.width / frame.size.height) * i;
                 CGPoint center = CGPointMake(startX * 0.5, frame.size.height * 0.5);
-                CGFloat radius = frame.size.height * 0.5 - margin - 1;
+                CGFloat radius = frame.size.height * 0.5;
                 CGFloat angle = 4 * M_PI / 5;
                 
                 //画五角星
-                [start moveToPoint:CGPointMake(startX * 0.5, margin)];
+                [start moveToPoint:CGPointMake(startX * 0.5, 0)];
                 for (int i = 0; i < 5; i ++) {
                     CGFloat x = center.x - sinf((i + 1) * angle) * radius;
                     CGFloat y = center.y - cosf((i + 1) * angle) * radius;
                     [start addLineToPoint:CGPointMake(x, y)];
                 }
-                [start addLineToPoint:CGPointMake(startX * 0.5, margin)];
+                [start addLineToPoint:CGPointMake(startX * 0.5, 0)];
             }
         }
         
@@ -70,12 +72,12 @@
 }
 
 - (void)setScore:(CGFloat)score {
+    NSInteger num = self.frame.size.width / self.frame.size.height;
+    if (score > num * 2) {//设置上限
+        score = num * 2;
+    }
     _score = score;
-    self.backgroudLayer.strokeEnd = score * 0.1f;
-}
-
-- (CGFloat)margin {
-    return 0.f;
+    self.backgroudLayer.strokeEnd = score / (num * 2);
 }
 
 @end

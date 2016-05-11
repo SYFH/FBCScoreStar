@@ -12,6 +12,9 @@ start.score = 3;
 [self.view addSubview:start];
 ```
 
+### 注意
+在使用时, 视图的宽必须大于高度, 若不符合标准则Crash!
+
 ### License
 The MIT License (MIT)
 
