@@ -27,6 +27,7 @@
     
     CGFloat y = 80;
     for (int i = 0; i < 5; i ++) {
+        
         FBCScoreStar *start = [[FBCScoreStar alloc] initWithFrame:CGRectMake(10, i * y + 50, 50 * (i + 1), 50)];
         start.startColor = [UIColor orangeColor];
         start.score = 1;
@@ -53,7 +54,6 @@
         star.score = score;
         scoreLB.text = [NSString stringWithFormat:@"%.2f", score];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {
