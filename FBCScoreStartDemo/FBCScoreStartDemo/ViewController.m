@@ -28,14 +28,15 @@
     CGFloat y = 80;
     for (int i = 0; i < 5; i ++) {
         
-        FBCScoreStar *start = [[FBCScoreStar alloc] initWithFrame:CGRectMake(10, i * y + 50, 50 * (i + 1), 50)];
-        start.startColor = [UIColor orangeColor];
-        start.score = 1;
-        [self.view addSubview:start];
-        [self.starArr addObject:start];
+        FBCScoreStar *star = [[FBCScoreStar alloc] initWithFrame:CGRectMake(10, i * y + 50, 50 * (i + 1), 50)];
+        star.starBGColor = [UIColor colorWithWhite:0.85 alpha:1];
+        star.starColor = [UIColor orangeColor];
+        star.score = 1;
+        [self.view addSubview:star];
+        [self.starArr addObject:star];
         
-        UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(start.frame) + 10, i * y + 65, 80, 20)];
-        score.text = [NSString stringWithFormat:@"%.2f", start.score];
+        UILabel *score = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(star.frame) + 10, i * y + 65, 80, 20)];
+        score.text = [NSString stringWithFormat:@"%.2f", star.score];
         score.textColor = [UIColor blackColor];
         [self.view addSubview:score];
         [self.scoreArr addObject:score];

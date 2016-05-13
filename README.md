@@ -7,6 +7,7 @@
 ### 使用方法
 ```
 ScoreStart *star = [[ScoreStart alloc] initWithFrame:CGRectMake(10, 100, 250, 50)];
+star.starBGColor = [UIColor redColor];//星星的背景颜色
 star.startColor = [UIColor orangeColor];
 star.score = 3;
 [self.view addSubview:star];

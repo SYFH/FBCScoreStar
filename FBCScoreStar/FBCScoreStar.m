@@ -24,16 +24,18 @@
         //使用时, 视图的宽度必须大于高度
         NSAssert(!(frame.size.width < frame.size.height), @"视图的宽度小于高度!");
         
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1];
         NSInteger num = frame.size.width / frame.size.height;//个数
         
-        //底层
+        //进度
         UIBezierPath *backgroudPath = [UIBezierPath bezierPath];
         [backgroudPath moveToPoint:CGPointMake(0, frame.size.height * 0.5)];
         [backgroudPath addLineToPoint:CGPointMake(frame.size.width, frame.size.height * 0.5)];
         CAShapeLayer *backgroudLayer = [CAShapeLayer layer];
         backgroudLayer.path = backgroudPath.CGPath;
         backgroudLayer.lineWidth = frame.size.height;
+        backgroudLayer.strokeColor = [UIColor orangeColor].CGColor;
+        backgroudLayer.fillColor = [UIColor orangeColor].CGColor;
         [self.layer addSublayer:backgroudLayer];
         self.backgroudLayer = backgroudLayer;
         
@@ -65,8 +67,13 @@
     return self;
 }
 
-- (void)setStartColor:(UIColor *)startColor {
-    _startColor = startColor;
+- (void)setStarBGColor:(UIColor *)starBGColor {
+    _starBGColor = starBGColor;
+    self.backgroundColor = starBGColor;
+}
+
+- (void)setStarColor:(UIColor *)startColor {
+    _starColor = startColor;
     self.backgroudLayer.strokeColor = startColor.CGColor;
     self.backgroudLayer.fillColor = startColor.CGColor;
 }
